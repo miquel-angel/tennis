@@ -52,6 +52,20 @@ describe("Tennis", function() {
 			// assert
 			expect(response).toEqual(expect_message);
 		});
+		it( "should return deuce when both make 34 point", function() {
+			// Arrange
+			expect_message = "Deuce";
+			whenPlayerScore(2,tennis.PLAYER_A,tennis);
+			whenPlayerScore(2,tennis.PLAYER_B,tennis);
+			whenPlayerScore(1,tennis.PLAYER_A,tennis);
+			whenPlayerScore(1,tennis.PLAYER_B,tennis);
+			whenPlayerScore(1,tennis.PLAYER_A,tennis);
+			whenPlayerScore(1,tennis.PLAYER_B,tennis);
+			// act
+			response = tennis.getScore() ;
+			// assert
+			expect(response).toEqual(expect_message);
+		});
 	});
 });
 
