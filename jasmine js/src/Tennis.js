@@ -7,7 +7,7 @@ Tennis.prototype.PLAYER_B = 1;
 Tennis.prototype.getScore = function() {
 	if(
 		this.player_values[this.PLAYER_A] == this.player_values[this.PLAYER_B] &&
-		this.player_values[this.PLAYER_B] == 45
+		(this.player_values[this.PLAYER_B] == 45 || this.player_values[this.PLAYER_B] == 60)
 	)
 	{
 		return "Deuce";
