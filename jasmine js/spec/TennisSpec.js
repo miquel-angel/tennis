@@ -24,5 +24,17 @@ describe("Tennis", function() {
 			// assert
 			expect(response).toEqual(expect_message);
 		});
+		it( "should return draw when both make 2 point", function() {
+			// Arrange
+			expect_message = "Player A 30 - Player B 30";
+			tennis.score(tennis.PLAYER_A);
+			tennis.score(tennis.PLAYER_A);
+			tennis.score(tennis.PLAYER_B);
+			tennis.score(tennis.PLAYER_B);
+			// act
+			response = tennis.getScore() ;
+			// assert
+			expect(response).toEqual(expect_message);
+		});
 	});
 });
