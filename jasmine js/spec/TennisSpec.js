@@ -42,6 +42,16 @@ describe("Tennis", function() {
 			// assert
 			expect(response).toEqual(expect_message);
 		});
+		it( "should return deuce when both make 3 point", function() {
+			// Arrange
+			expect_message = "Deuce";
+			whenPlayerScore(3,tennis.PLAYER_A,tennis);
+			whenPlayerScore(3,tennis.PLAYER_B,tennis);
+			// act
+			response = tennis.getScore() ;
+			// assert
+			expect(response).toEqual(expect_message);
+		});
 	});
 });
 
