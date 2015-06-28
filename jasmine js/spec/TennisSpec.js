@@ -17,8 +17,11 @@ describe("Tennis", function() {
 		it( "should return draw when both make one point", function() {
 			// Arrange
 			expect_message = "Player A 15 - Player B 15";
-			tennis.score(tennis.PLAYER_A);
-			tennis.score(tennis.PLAYER_B);
+			// Refactor test because we see that we did many times that call, and also now the code is more easy to follow.
+			// tennis.score(tennis.PLAYER_A);
+			// tennis.score(tennis.PLAYER_B);
+			whenPlayerScore(1,tennis.PLAYER_A,tennis);
+			whenPlayerScore(1,tennis.PLAYER_B,tennis);				
 			// act
 			response = tennis.getScore() ;
 			// assert
@@ -27,10 +30,13 @@ describe("Tennis", function() {
 		it( "should return draw when both make 2 point", function() {
 			// Arrange
 			expect_message = "Player A 30 - Player B 30";
-			tennis.score(tennis.PLAYER_A);
-			tennis.score(tennis.PLAYER_A);
-			tennis.score(tennis.PLAYER_B);
-			tennis.score(tennis.PLAYER_B);
+			// Refactor test because we see that we did many times that call, and also now the code is more easy to follow.
+			//tennis.score(tennis.PLAYER_A);
+			//tennis.score(tennis.PLAYER_A);
+			//tennis.score(tennis.PLAYER_B);
+			//tennis.score(tennis.PLAYER_B);
+			whenPlayerScore(2,tennis.PLAYER_A,tennis);
+			whenPlayerScore(2,tennis.PLAYER_B,tennis);
 			// act
 			response = tennis.getScore() ;
 			// assert
@@ -38,3 +44,9 @@ describe("Tennis", function() {
 		});
 	});
 });
+
+function whenPlayerScore(points, player, tennis) {
+	for (var i = 0; i < points; ++i) {
+		tennis.score(player);
+	} 
+}
