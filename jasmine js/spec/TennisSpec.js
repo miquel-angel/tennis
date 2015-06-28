@@ -52,7 +52,7 @@ describe("Tennis", function() {
 			// assert
 			expect(response).toEqual(expect_message);
 		});
-		it( "should return deuce when both make 34 point", function() {
+		it( "should return deuce when both make 4 point", function() {
 			// Arrange
 			expect_message = "Deuce";
 			whenPlayerScore(2,tennis.PLAYER_A,tennis);
