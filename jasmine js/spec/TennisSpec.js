@@ -16,7 +16,7 @@ describe("Tennis", function() {
 		});
 		it( "should return draw when both make one point", function() {
 			// Arrange
-			expect_message = "Player A 0 - Player B 0";
+			expect_message = "Player A 15 - Player B 15";
 			tennis.score(tennis.PLAYER_A);
 			tennis.score(tennis.PLAYER_B);
 			// act
