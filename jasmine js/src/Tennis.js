@@ -1,12 +1,12 @@
 function Tennis() {
-	this.player_message = "Player A 0 - Player B 0"
+	this.player_values = [0,0];
 }
 
-Tennis.prototype.PLAYER_A = 1;
-Tennis.prototype.PLAYER_B = 2;
+Tennis.prototype.PLAYER_A = 0;
+Tennis.prototype.PLAYER_B = 1;
 Tennis.prototype.getScore = function() {
-	return this.player_message;
+	return "Player A " +  this.player_values[this.PLAYER_A] + " - Player B "+ this.player_values[this.PLAYER_B];
 };
 Tennis.prototype.score = function(player) {
-	this.player_message = "Player A 15 - Player B 15"
+	this.player_values[player] += 15;
 };
